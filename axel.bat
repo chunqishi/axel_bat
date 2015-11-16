@@ -6,6 +6,7 @@ set http_proxy=http://165.225.96.34:10015
 set https_proxy=http://165.225.96.34:10015
 
 set BAT_HOME=%~dp0
+set AXEL_EXE=%BAT_HOME%\axel.exe
 set PASTE_EXE=%BAT_HOME%\paste.exe
 set DOWNLOAD_HOME=%USERPROFILE%\Downloads
 set SHORT_CUT=%USERPROFILE%\Desktop\Axel.lnk
@@ -15,7 +16,7 @@ CD %DOWNLOAD_HOME%
 
 for /f "tokens=*" %%a in ('%PASTE_EXE%') do (
   echo Downloading %%a ...
-  axel -n 20 "%%a"
+  %AXEL_EXE% -n 20 "%%a"
 )
 
 start %DOWNLOAD_HOME%
