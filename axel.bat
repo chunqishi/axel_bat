@@ -23,8 +23,8 @@ If "%errorlevel%"=="0"  (
 for /f "tokens=*" %%a in ('%PASTE_EXE%') do (
   echo Downloading %%a ...
   echo Downloading %%a >> %AXEL_LOG%
-  %AXEL_EXE% -n 20 %%a  || (
-	%BAT_HOME%curl.exe -L -O -k %%~a
+  %AXEL_EXE% -n 20 "%%a"  || (
+	%BAT_HOME%curl.exe -L -O -k "%%a"
   )  
 )
 
