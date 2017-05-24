@@ -29,4 +29,6 @@ for /f "tokens=*" %%a in ('%PASTE_EXE%') do (
 )
 
 start %DOWNLOAD_HOME%
-pause
+
+rem pause
+timeout /t 7200
